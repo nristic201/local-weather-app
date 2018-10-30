@@ -11,20 +11,13 @@ export class CurrentWeatherComponent implements OnInit {
 
   current: ICurrentWeather;
   constructor(
-    private http: HttpClient,
     private weatherService: WeatherService
-  ) {
-    this.current = {
-      city: 'Bethesda',
-      country: 'US',
-      date: new Date(),
-      image: 'assets/img/sunny.svg'
-    } as ICurrentWeather;
-  }
+  ) { }
 
   ngOnInit() {
     this.weatherService.getCurrentWeather('Bethesda', 'US')
-      .subscribe(res => this.current = res)
+      .subscribe(res =>
+        this.current = res)
   }
 
 }
