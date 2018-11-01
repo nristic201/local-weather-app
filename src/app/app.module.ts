@@ -11,10 +11,14 @@ import { MaterialModule } from './material.module';
 
 import 'hammerjs';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
+import {  FormsModule,ReactiveFormsModule} from '@angular/forms';
+import { CitySearchComponent } from './city-search/city-search.component'
+
 @NgModule({
   declarations: [
     AppComponent,
-    CurrentWeatherComponent
+    CurrentWeatherComponent,
+    CitySearchComponent
   ],
   imports: [
     BrowserModule,
@@ -22,7 +26,9 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
     HttpClientModule,
     FlexLayoutModule,
     MaterialModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    ReactiveFormsModule,
+    FormsModule
   ],
   providers: [WeatherService],
   bootstrap: [AppComponent]
